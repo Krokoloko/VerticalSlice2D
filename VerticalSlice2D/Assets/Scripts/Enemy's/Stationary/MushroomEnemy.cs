@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StationaryEnemy : Enemy {
+public class MushroomEnemy : Enemy {
 
     private float radius = 5;
     private SphereCollider _detectZone;
