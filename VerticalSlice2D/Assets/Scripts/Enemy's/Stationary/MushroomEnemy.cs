@@ -31,9 +31,10 @@ public class MushroomEnemy : Enemy {
             case State.attack:
                 CheckSide();
                 base.animator.SetBool("trig", _inRange);
-                if (!_attacked )
+                if (!_attacked)
                 {
 
+                    _attacked = false;
                 }
                 break;
             case State.idle:
