@@ -4,18 +4,44 @@ using UnityEngine;
 
 public class MushroomEnemy : Enemy {
 
-    private float radius = 5;
-    private SphereCollider _detectZone;
+    public float radius = 5;
+    public GameObject player;
+    private CircleCollider2D _detectZone;
     private bool _inRange = false;
+    private bool _leftSide;
+    private bool _attacked;
+
+    private void CheckSide()
+    {
+        if(transform.position.x < player.transform.position.x)
+        {
+            _leftSide = false;
+            base.spriteRend.flipY = true;
+        }else
+        {
+            _leftSide = true;
+            base.spriteRend.flipY = false;
+        }
+    }
+
     private void EnemyRoutine()
     {
         switch (base.enemyState)
         {
             case State.attack:
+                CheckSide();
+                base.animator.SetBool("trig", _inRange);
+                if (!_attacked )
+                {
+
+                }
                 break;
             case State.idle:
+                _attacked = false;
+                base.animator.SetBool("trig", _inRange);
                 break;
             case State.dead:
+                base.animator.SetTrigger("dead");
                 break;
             default:
                 Debug.Log("State is not defined. Setting it to idle");
@@ -37,6 +63,8 @@ public class MushroomEnemy : Enemy {
                 {
                     base.enemyState = State.idle;
                 }
+                break;
+            case State.dead:
                 break;
             default:
                 base.enemyState = State.idle;
@@ -61,7 +89,8 @@ public class MushroomEnemy : Enemy {
 
     public override void Start () {
         base.Start();
-        _detectZone = new SphereCollider();
+        CheckSide();
+        _detectZone = gameObject.GetComponent<CircleCollider2D>();
         _detectZone.isTrigger = true;
         _detectZone.radius = radius;
 	}

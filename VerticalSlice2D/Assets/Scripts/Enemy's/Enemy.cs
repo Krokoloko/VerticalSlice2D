@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
     public GameObject animationObj;
     public enum State {idle, moving, attack, dead};
 
+    public SpriteRenderer spriteRend;
     public Collider2D collision;
     public Animator animator;
     public State enemyState;
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour {
     public virtual void Start () {
         collision = physicsObj.GetComponent<Collider2D>();
         animator = animationObj.GetComponent<Animator>();
+        spriteRend = animationObj.GetComponent<SpriteRenderer>();
 	}
 	
     public virtual void OnCollisionEnter2D(Collision2D collision)
