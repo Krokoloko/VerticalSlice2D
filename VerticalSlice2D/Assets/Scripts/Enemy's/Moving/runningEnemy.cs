@@ -2,31 +2,81 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class runningEnemy : Enemy {
+public class RunningEnemy : Enemy {
 
     private Ray ray;
     private string platform;
+    
     public bool leftSide;
+    public float walkingSpeed;
+    public Transform firstPoint;
+    public Transform secondPoint;
 
     private void CheckSide()
     {
-        if (transform.position.x < transform.position.x)
+        if (leftSide)
         {
-            leftSide = false;
-            base.spriteRend.flipY = true;
+            if (firstPoint.position.x >= transform.position.x)
+            {
+                leftSide = false;
+            }
         }
         else
         {
-            leftSide = true;
-            base.spriteRend.flipY = false;
+            if (secondPoint.position.x <= transform.position.x)
+            {
+                leftSide = true;
+            }
         }
+        base.spriteRend.flipY = leftSide;
     }
 
     public override void Start () {
-		
-	}
-	
-	void Update () {
-	    	
-	}
+        base.Start();
+        leftSide = true; //base.RandomBool();
+        base.enemyState = State.moving;
+
+    }
+
+    private void EnemyRoutine()
+    {
+        switch (base.enemyState)
+        {
+            case State.moving:
+                if (leftSide)
+                {
+                    transform.Translate(Vector3.left * Time.deltaTime * walkingSpeed);
+                }
+                else
+                {
+                    transform.Translate(Vector3.right * Time.deltaTime * walkingSpeed);
+                }
+                break;
+            case State.dead:
+                Destroy(gameObject);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void RoutineSwitch()
+    {
+        switch (base.enemyState)
+        {
+            case State.moving:
+                CheckSide();
+                break;
+            case State.idle:
+                base.enemyState = State.moving;
+                break;
+        }
+    }
+
+    void Update () {
+        EnemyRoutine();
+        RoutineSwitch();
+        Debug.Log(leftSide);
+        
+    }
 }
