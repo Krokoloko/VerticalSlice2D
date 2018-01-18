@@ -147,7 +147,6 @@ Transform:
   m_PrefabInternal: {fileID: 1693827436}
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1 &33679512
 =======
 --- !u!1 &442475713
@@ -271,35 +270,21 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &796070541
 >>>>>>> f5d2e306bf7cb3048a10ee222fe85b1254eceebc
-=======
---- !u!1 &796070541
->>>>>>> parent of cb84792... background assets implementatie
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-<<<<<<< HEAD
   - component: {fileID: 33679513}
   - component: {fileID: 33679514}
   m_Layer: 0
   m_Name: 5l (1)
   m_TagString: Untagged
-=======
-  - component: {fileID: 796070545}
-  - component: {fileID: 796070544}
-  - component: {fileID: 796070543}
-  - component: {fileID: 796070542}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
->>>>>>> parent of cb84792... background assets implementatie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 --- !u!4 &33679513
 Transform:
   m_ObjectHideFlags: 0
@@ -380,9 +365,6 @@ GameObject:
   m_IsActive: 1
 --- !u!81 &796070542
 AudioListener:
-=======
---- !u!81 &796070542
-AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -397,29 +379,11 @@ Behaviour:
   m_Enabled: 1
 --- !u!20 &796070544
 Camera:
->>>>>>> parent of cb84792... background assets implementatie
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 796070541}
   m_Enabled: 1
-<<<<<<< HEAD
---- !u!124 &796070543
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 796070541}
-  m_Enabled: 1
---- !u!20 &796070544
-Camera:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 796070541}
-  m_Enabled: 1
-=======
->>>>>>> parent of cb84792... background assets implementatie
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -454,7 +418,6 @@ Transform:
 <<<<<<< HEAD
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1999477071}
   m_Enabled: 1
@@ -497,8 +460,6 @@ Transform:
   m_MaskInteraction: 0
 =======
 =======
-=======
->>>>>>> parent of cb84792... background assets implementatie
   m_GameObject: {fileID: 796070541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.02, y: 0.05, z: -10}
@@ -579,9 +540,6 @@ Prefab:
 --- !u!1001 &1693827436
 Prefab:
   m_ObjectHideFlags: 0
-<<<<<<< HEAD
->>>>>>> parent of cb84792... background assets implementatie
-=======
 >>>>>>> parent of cb84792... background assets implementatie
   serializedVersion: 2
   m_Modification:
@@ -622,7 +580,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d939391c6338e064a9dd3babc22de064, type: 2}
   m_IsPrefabParent: 0
-<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1 &1702242633
 GameObject:
@@ -679,8 +636,6 @@ Transform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> f5d2e306bf7cb3048a10ee222fe85b1254eceebc
-=======
->>>>>>> parent of cb84792... background assets implementatie
 =======
 >>>>>>> parent of cb84792... background assets implementatie
 --- !u!1 &2030587210
@@ -910,7 +865,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1 &2086562382
 =======
 --- !u!1 &2084970648
@@ -1008,7 +962,5 @@ SpriteRenderer:
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> f5d2e306bf7cb3048a10ee222fe85b1254eceebc
-=======
->>>>>>> parent of cb84792... background assets implementatie
 =======
 >>>>>>> parent of cb84792... background assets implementatie
