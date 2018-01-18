@@ -16,7 +16,10 @@ public class EnemyProjectile : MonoBehaviour {
 
     void Start()
     {
-        identity = gameObject.GetComponentInParent<GameObject>().tag;
+        if(identity == null)
+        {
+            identity = gameObject.GetComponentInParent<GameObject>().tag;
+        }
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         _material = gameObject.GetComponent<Material>();
         for (int i = 0; i < types.Count; i++)
@@ -25,6 +28,7 @@ public class EnemyProjectile : MonoBehaviour {
             {
                 _material.CopyPropertiesFromMaterial(materialPrefabs[i]);
                 _spriteRenderer.sprite = bulletSprites[i];
+                _spriteRenderer.material = _material;
             }
         }
     }
