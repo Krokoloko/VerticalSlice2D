@@ -28,13 +28,14 @@ public class RunningEnemy : Enemy {
                 leftSide = true;
             }
         }
-        base.spriteRend.flipY = leftSide;
+        base.spriteRend.flipX = leftSide;
     }
 
     public override void Start () {
         base.Start();
-        leftSide = true; //base.RandomBool();
+        leftSide = base.RandomBool();
         base.enemyState = State.moving;
+        
 
     }
 
