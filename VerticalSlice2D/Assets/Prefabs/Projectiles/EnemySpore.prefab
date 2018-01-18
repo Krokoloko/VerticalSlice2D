@@ -92,7 +92,9 @@ MonoBehaviour:
   materialPrefabs:
   - {fileID: 2100000, guid: dc877a51ef49249418b699c9b9da3ea3, type: 2}
   - {fileID: 2100000, guid: 0a082cb339db0e94fa81b49475063abc, type: 2}
-  types: []
+  types:
+  - Mushroom
+  - Tullip
   Collider: {fileID: 58782458681365572}
   animator: {fileID: 95231306758430542}
   identity: 
