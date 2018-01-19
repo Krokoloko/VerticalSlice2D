@@ -43,4 +43,16 @@ public class Enemy : MonoBehaviour {
         } 
     }
 
+    public virtual bool RandomBool()
+    {
+        int sug = Random.Range(0, 1);
+        if (sug == 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }

@@ -2,36 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class runningEnemy : Enemy {
+public class RunningEnemy : Enemy {
 
-    private Ray ray;
-    private string platform;
+    public float walkingSpeed;
     public bool leftSide;
+
+    public Transform firstPoint;
+    public Transform secondPoint;
 
     private void CheckSide()
     {
-        if (transform.position.x < transform.position.x)
+        if (leftSide)
         {
-            leftSide = false;
-            base.spriteRend.flipY = true;
+            if (firstPoint.position.x >= transform.position.x)
+            {
+                leftSide = false;
+            }
         }
         else
         {
-            leftSide = true;
-            base.spriteRend.flipY = false;
+            if (secondPoint.position.x <= transform.position.x)
+            {
+                leftSide = true;
+            }
         }
-<<<<<<< HEAD
-    }
-
-    public override void Start () {
-		
-	}
-	
-	void Update () {
-	    	
-	}
-=======
         base.spriteRend.flipX = leftSide;
+
     }
 
     public override void Start () {
@@ -83,5 +79,4 @@ public class runningEnemy : Enemy {
         Debug.Log(leftSide);
         
     }
->>>>>>> f97fc0561867521fd39f9d6b3428c5ae1101154b
 }

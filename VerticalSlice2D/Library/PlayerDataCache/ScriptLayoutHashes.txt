@@ -1,4 +1,5 @@
 WindowsStandalone
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Parallax
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -110,6 +111,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+f552fd23bec5e2c2df21343ba12c6ed4 Assembly-CSharp.dll:.RunningEnemy
 5338a2ebec7a79121c9c836163fe75b9 Assembly-CSharp.dll:.MushroomEnemy
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -137,4 +139,10 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 fa50730f234faf86620ca36cff2e7016 Assembly-CSharp.dll:.EnemyProjectile
-ac71598153b559964d4aeb1316d670ad Assembly-CSharp.dll:.runningEnemy
+fcf913d48acf22bd476ccacbb344d782 Assembly-CSharp.dll:.LookAtDirection
+b01ff4e48d6ebcb638bd28a688d1892d Assembly-CSharp.dll:.PlayerShoot
+a723fbedae099b288a2c2e28fddfb6d7 Assembly-CSharp.dll:.PlayerMovement
+78e94b38563b1d69695f77c7554df62a Assembly-CSharp.dll:.PlayerJump
+ce09cb02e2f857c8aa562f2552261f90 Assembly-CSharp.dll:.PlayerCollision
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PlayerHealth
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Bullet
