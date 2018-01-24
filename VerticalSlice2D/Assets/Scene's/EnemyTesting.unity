@@ -2733,7 +2733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b783d56873a055847a00a5e083a117cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 1
   physicsObj: {fileID: 123686653}
   animationObj: {fileID: 1051001973}
   spriteRend: {fileID: 0}
