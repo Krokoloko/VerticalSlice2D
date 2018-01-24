@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene's/TestScene_jeffrin.unity
+- path: Assets/Scene's/EnemyTesting.unity
   isLoaded: 1
   isActive: 1
