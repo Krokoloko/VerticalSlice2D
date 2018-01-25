@@ -112,6 +112,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &5173551
 GameObject:
   m_ObjectHideFlags: 0
@@ -9453,3 +9454,51 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+=======
+--- !u!1001 &1524824425
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4474355520040836, guid: bc8a11ed2183b5742bd0f118083d44fa, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.65036625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474355520040836, guid: bc8a11ed2183b5742bd0f118083d44fa, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.860548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474355520040836, guid: bc8a11ed2183b5742bd0f118083d44fa, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3.09375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474355520040836, guid: bc8a11ed2183b5742bd0f118083d44fa, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474355520040836, guid: bc8a11ed2183b5742bd0f118083d44fa, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474355520040836, guid: bc8a11ed2183b5742bd0f118083d44fa, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474355520040836, guid: bc8a11ed2183b5742bd0f118083d44fa, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474355520040836, guid: bc8a11ed2183b5742bd0f118083d44fa, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326514847766570, guid: bc8a11ed2183b5742bd0f118083d44fa, type: 2}
+      propertyPath: m_Name
+      value: Level 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: bc8a11ed2183b5742bd0f118083d44fa, type: 2}
+  m_IsPrefabParent: 0
+>>>>>>> c2908695c6e4c1d7ab90075dd58966506001c24d
