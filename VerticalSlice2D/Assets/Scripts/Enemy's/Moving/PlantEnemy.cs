@@ -15,10 +15,10 @@ public class PlantEnemy : Enemy {
         switch (base.enemyState)
         {
             case State.idle:
-                if ()
+            /*    if ()
                 {
 
-                }
+                }*/
                 break;
             case State.attack:
                 break;
