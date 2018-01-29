@@ -6,10 +6,11 @@ public class MushroomEnemy : Enemy {
 
     public float radius = 5;
     public GameObject player;
+    public GameObject projectileObject;
+
+    private EnemyProjectile _projectile;
     private CircleCollider2D _detectZone;
-    private bool _inRange = false;
-    private bool _leftSide;
-    private bool _attacked;
+    private bool _leftSide, _attacked, _inRange;
 
     private void CheckSide()
     {
@@ -24,6 +25,11 @@ public class MushroomEnemy : Enemy {
         }
     }
 
+    private void Shoot()
+    {
+         //Instantiate<GameObject>();
+    }
+
     private void EnemyRoutine()
     {
         switch (base.enemyState)
@@ -33,7 +39,7 @@ public class MushroomEnemy : Enemy {
                 base.animator.SetBool("trig", _inRange);
                 if (!_attacked)
                 {
-
+                    Shoot();
                     _attacked = false;
                 }
                 break;
@@ -49,6 +55,8 @@ public class MushroomEnemy : Enemy {
                 break;
         }
     }
+
+    //The conditions to change its behaviour.
     private void RoutineSwitch()
     {
         switch (base.enemyState)
@@ -90,8 +98,11 @@ public class MushroomEnemy : Enemy {
 
     public override void Start () {
         base.Start();
+        _inRange = false;
         CheckSide();
         _detectZone = gameObject.GetComponent<CircleCollider2D>();
+        _projectile = new EnemyProjectile();
+
         _detectZone.isTrigger = true;
         _detectZone.radius = radius;
 	}

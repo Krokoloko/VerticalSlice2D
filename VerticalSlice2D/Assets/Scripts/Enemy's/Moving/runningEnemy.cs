@@ -10,6 +10,7 @@ public class RunningEnemy : Enemy {
     public Transform firstPoint;
     public Transform secondPoint;
 
+    //To check which side the sprite has to face to
     private void CheckSide()
     {
         if (leftSide)
@@ -30,14 +31,16 @@ public class RunningEnemy : Enemy {
 
     }
 
-    public override void Start () {
+    public override void Start()
+    {
         base.Start();
         leftSide = base.RandomBool();
         base.enemyState = State.moving;
-        
+
 
     }
 
+    //The usual state actions
     private void EnemyRoutine()
     {
         switch (base.enemyState)
@@ -60,6 +63,7 @@ public class RunningEnemy : Enemy {
         }
     }
 
+    //The conditions to change its behaviour.
     private void RoutineSwitch()
     {
         switch (base.enemyState)
@@ -73,10 +77,9 @@ public class RunningEnemy : Enemy {
         }
     }
 
-    void Update () {
+    void Update()
+    {
         EnemyRoutine();
         RoutineSwitch();
-        Debug.Log(leftSide);
-        
     }
 }
