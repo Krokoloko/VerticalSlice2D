@@ -10,8 +10,6 @@ public class parallaxing : MonoBehaviour {
 	
 	public Vector3 previousCameraPosition;
 	
-
-	// Use this for initialization
 	void Start () {
 		
 		previousCameraPosition = transform.position;

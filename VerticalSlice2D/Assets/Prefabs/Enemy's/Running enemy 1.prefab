@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4775609965359538}
-  - component: {fileID: 114366802542006790}
   - component: {fileID: 212450116958434382}
+  - component: {fileID: 114914089568278890}
   m_Layer: 0
   m_Name: Running enemy 1
   m_TagString: Untagged
@@ -144,7 +144,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114366802542006790
+--- !u!114 &114914089568278890
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -152,17 +152,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1208241682061326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b783d56873a055847a00a5e083a117cf, type: 3}
+  m_Script: {fileID: 11500000, guid: d085ca00f40fd4b42a359188ae36c6a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  physicsObj: {fileID: 1852291954656890}
-  animationObj: {fileID: 1418602670076666}
+  health: 1
+  physicsObj: {fileID: 0}
+  animationObj: {fileID: 0}
   spriteRend: {fileID: 0}
   collision: {fileID: 0}
   animator: {fileID: 0}
   enemyState: 0
-  walkingSpeed: 6
+  walkingSpeed: 6.5
   leftSide: 0
   firstPoint: {fileID: 0}
   secondPoint: {fileID: 0}

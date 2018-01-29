@@ -4,49 +4,49 @@ using UnityEngine;
 
 public class EnemyProjectile : MonoBehaviour {
  
-    public List<Sprite> bulletSprites;
-    public List<Material> materialPrefabs;
-    public List<string> types;
-    public CircleCollider2D Collider;
     public Animator animator;
-    public string identity;
-    private Material _material;
-    private SpriteRenderer _spriteRenderer;
-    private Projectiles _type;
+    public enum bullet {mushroom, tullip};
+    public SpriteRenderer spriteRenderer;
+    public Sprite projectileSprite;
+
+    private Vector3 _targetPosition;
+
+    private bullet identity;
+
+    public Vector3 Travel(Vector3 position, float speed)
+    {
+        return Vector3.MoveTowards(transform.position, position, speed * Time.deltaTime);
+    }
+
+    private void Awake()
+    {
+        _targetPosition = GameObject.FindGameObjectWithTag("player").transform.position;
+    }
 
     void Start()
     {
-        if(identity == null)
-        {
-            identity = gameObject.GetComponentInParent<GameObject>().tag;
-        }
-        _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        _material = gameObject.GetComponent<Material>();
-        for (int i = 0; i < types.Count; i++)
-        {
-            if (identity == types[i])
-            {
-                _material.CopyPropertiesFromMaterial(materialPrefabs[i]);
-                _spriteRenderer.sprite = bulletSprites[i];
-                _spriteRenderer.material = _material;
-            }
-        }
+               
     }
 
     void Update () {
         switch (identity)
         {
-            case "Mushroom":
-                Projectiles.Spore type1 = new Projectiles.Spore();
-                transform.Translate(type1.Travel());
+            case bullet.mushroom:
+                transform.position = Travel(_targetPosition, 1f);
                 break;
-            case "Tullip":
-                Projectiles.Spore type2 = new Projectiles.Spore();
-                transform.Translate(type2.Travel());
+            case bullet.tullip:
                 break;
             default:
                 Debug.Log("Identity is not recognised.");
                 break;
         }
-	}
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "player")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
