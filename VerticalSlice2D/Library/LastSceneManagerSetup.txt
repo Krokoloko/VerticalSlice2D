@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
 - path: Assets/Scene's/MainMenu.unity
-=======
-- path: Assets/Scene's/EnemyTesting.unity
->>>>>>> 3205f19b7ee40647112f739d8143284f62bfdbec
   isLoaded: 1
   isActive: 1
