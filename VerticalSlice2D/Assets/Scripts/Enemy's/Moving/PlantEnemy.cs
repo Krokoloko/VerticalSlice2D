@@ -21,10 +21,17 @@ public class PlantEnemy : Enemy {
         switch (base.enemyState)
         {
             case State.idle:
+<<<<<<< HEAD
                 if (_inRange)
                 {
                     base.enemyState = State.attack;
                 }
+=======
+            /*    if ()
+                {
+
+                }*/
+>>>>>>> dd4babbe6c91fa0b2fa56d9422adfd75866966d3
                 break;
             case State.attack:
                 if (transform.position.y >= jumpHeight+_origin.y)
