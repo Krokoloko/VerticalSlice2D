@@ -7,18 +7,18 @@ public class camera_follow : MonoBehaviour {
     public GameObject firstEnd;
     public GameObject secondEnd;
 
-    private float firstX;
-    private float secondX;
+    private float _firstX;
+    private float _secondX;
 
 
 	void Start () {
-        firstX = firstEnd.transform.position.x;
-        secondX = secondEnd.transform.position.x;
+        _firstX = firstEnd.transform.position.x;
+        _secondX = secondEnd.transform.position.x;
 	}
 
     void Update()
     {
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, firstX, secondX),transform.position.y,transform.position.z);    
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, _firstX, _secondX),transform.position.y,transform.position.z);    
     }
 
     void LateUpdate () {
