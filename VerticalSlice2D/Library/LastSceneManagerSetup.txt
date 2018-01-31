@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene's/EnemyTesting.unity
+- path: Assets/Scene's/TestScene_Daan.unity
   isLoaded: 1
   isActive: 1
