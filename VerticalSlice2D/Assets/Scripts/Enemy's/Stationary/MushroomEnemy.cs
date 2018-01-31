@@ -8,7 +8,6 @@ public class MushroomEnemy : Enemy {
     public GameObject player;
     public GameObject projectileObject;
 
-    private EnemyProjectile _projectile;
     private CircleCollider2D _detectZone;
     private bool _leftSide, _attacked, _inRange;
 
@@ -27,7 +26,7 @@ public class MushroomEnemy : Enemy {
 
     private void Shoot()
     {
-         //Instantiate<GameObject>();
+         Instantiate(projectileObject);
     }
 
     private void EnemyRoutine()
@@ -65,12 +64,15 @@ public class MushroomEnemy : Enemy {
                 if (_inRange)
                 {
                     base.enemyState = State.attack;
+                    base.animator.SetBool("inRange",true);
                 }
                 break;
             case State.attack:
                 if (!_inRange)
                 {
+
                     base.enemyState = State.idle;
+                    base.animator.SetBool("inRange",false);
                 }
                 break;
             case State.dead:
@@ -101,7 +103,6 @@ public class MushroomEnemy : Enemy {
         _inRange = false;
         CheckSide();
         _detectZone = gameObject.GetComponent<CircleCollider2D>();
-        _projectile = new EnemyProjectile();
 
         _detectZone.isTrigger = true;
         _detectZone.radius = radius;

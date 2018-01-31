@@ -5,13 +5,14 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour {
  
     public Animator animator;
-    public enum bullet {mushroom, tullip};
+    public enum bullet {none, mushroom, tullip};
     public SpriteRenderer spriteRenderer;
     public Sprite projectileSprite;
+    public bullet identity;
 
     private Vector3 _targetPosition;
+    private Vector3 _traveling;
 
-    private bullet identity;
 
     public Vector3 Travel(Vector3 position, float speed)
     {
@@ -21,6 +22,8 @@ public class EnemyProjectile : MonoBehaviour {
     private void Awake()
     {
         _targetPosition = GameObject.FindGameObjectWithTag("player").transform.position;
+        _traveling = Travel(_targetPosition, 1f);
+        Debug.Log(_traveling);
     }
 
     void Start()
@@ -32,7 +35,7 @@ public class EnemyProjectile : MonoBehaviour {
         switch (identity)
         {
             case bullet.mushroom:
-                transform.position = Travel(_targetPosition, 1f);
+                transform.Translate(_traveling);
                 break;
             case bullet.tullip:
                 break;
