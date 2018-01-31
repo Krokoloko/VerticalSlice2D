@@ -9,5 +9,11 @@ EditorBuildSettings:
     path: Assets/Scene's/MainMenu.unity
     guid: f93629663cdef7b42ba3f8929039588f
   - enabled: 1
-    path: Assets/Scene's/EnemyTesting.unity
-    guid: da138e66a2e33b84bb8694c62448c231
+    path: Assets/Scene's/mainScene.unity
+    guid: 2712c6f4b15473c47b5164f9e1f9cdc1
+  - enabled: 1
+    path: Assets/Scene's/InstructionScene.unity
+    guid: 7065301be1fff674a8f331bd636d5484
+  - enabled: 1
+    path: Assets/Scene's/DeathScreen.unity
+    guid: db5b79d711386974486fe2ab2678bd03
