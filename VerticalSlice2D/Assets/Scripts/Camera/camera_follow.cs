@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class camera_follow : MonoBehaviour {
 
-    public GameObject firstEnd;
-    public GameObject secondEnd;
+    public Transform _target;
 
-    private float _firstX;
-    private float _secondX;
+    public float minX;
+    public float maxX;
+    public float minY;
+    public float maxY;
+    public bool debug;
 
 
-	void Start () {
-        _firstX = firstEnd.transform.position.x;
-        _secondX = secondEnd.transform.position.x;
-	}
-
-    void Update()
+    void LateUpdate()
     {
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, _firstX, _secondX),transform.position.y,transform.position.z);    
-    }
+        transform.position = new Vector3(Mathf.Clamp(_target.position.x, minX, maxX), Mathf.Clamp(_target.position.y, minY, maxY), transform.position.z);
 
-    void LateUpdate () {
-        if (Input.GetKey(KeyCode.A))
+        if (debug)
         {
-            transform.Translate(Vector3.left/5);
+            if (Input.GetKey(KeyCode.A))
+            {
+                transform.Translate(Vector3.left / 5);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                transform.Translate(Vector3.right / 5);
+            }
         }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right/5);
-        }
-	}
+        
+
+    }
 }
