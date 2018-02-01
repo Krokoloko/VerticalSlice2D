@@ -15,7 +15,10 @@ public class camera_follow : MonoBehaviour {
 
     void LateUpdate()
     {
-        transform.position = new Vector3(Mathf.Clamp(_target.position.x, minX, maxX), Mathf.Clamp(_target.position.y, minY, maxY), transform.position.z);
+        if (!debug || debug == null)
+        {
+            transform.position = new Vector3(Mathf.Clamp(_target.position.x, minX, maxX), Mathf.Clamp(_target.position.y, minY, maxY), transform.position.z);
+        }
 
         if (debug)
         {
