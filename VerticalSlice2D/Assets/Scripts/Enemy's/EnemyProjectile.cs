@@ -6,36 +6,38 @@ public class EnemyProjectile : MonoBehaviour {
  
     public Animator animator;
     public enum bullet {none, mushroom, tullip};
-    public SpriteRenderer spriteRenderer;
-    public Sprite projectileSprite;
     public bullet identity;
 
     private Vector3 _targetPosition;
     private Vector3 _traveling;
 
 
-    public Vector3 Travel(Vector3 position, float speed)
+    public Vector3 TravelTo(Vector3 position)
     {
-        return Vector3.MoveTowards(transform.position, position, speed * Time.deltaTime);
+        Vector3 heading = _targetPosition - transform.position;
+        Vector3 direction = heading / heading.magnitude;
+
+        return direction;
     }
 
     private void Awake()
     {
-        _targetPosition = GameObject.FindGameObjectWithTag("player").transform.position;
-        _traveling = Travel(_targetPosition, 1f);
-        Debug.Log(_traveling);
+        
     }
 
     void Start()
     {
-               
+        _targetPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        _traveling = TravelTo(_targetPosition);
+        Debug.Log(_traveling);
+        Destroy(this.gameObject, 10);
     }
 
     void Update () {
         switch (identity)
         {
             case bullet.mushroom:
-                transform.Translate(_traveling);
+                transform.Translate(_traveling * 2f * Time.deltaTime);
                 break;
             case bullet.tullip:
                 break;
@@ -49,7 +51,7 @@ public class EnemyProjectile : MonoBehaviour {
     {
         if (collision.gameObject.tag == "player")
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
