@@ -8,12 +8,10 @@ public class PlantEnemy : Enemy {
     private bool _attacking,_inRange = false;
 
     public float jumpHeight;
-    public BoxCollider2D detectZone;
 
 
     public override void Start () {
         base.Start();
-        detectZone.isTrigger = true;
 	}
 
     private void RoutineSwitch()
@@ -51,29 +49,13 @@ public class PlantEnemy : Enemy {
             case State.idle:
                 break;
             case State.attack:
-                transform.Translate(Vector3.up * Time.deltaTime);
+                transform.Translate(Vector3.up * 3 * Time.deltaTime);
                 break;
             case State.moving:
                 transform.Translate(Vector3.down * 1.1f * Time.deltaTime);
                 break;
             default:
                 break;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "player")
-        {
-            _inRange = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "player")
-        {
-            _inRange = false;
         }
     }
 
