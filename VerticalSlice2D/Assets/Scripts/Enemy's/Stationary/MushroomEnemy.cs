@@ -5,28 +5,46 @@ using UnityEngine;
 public class MushroomEnemy : Enemy {
 
     public float radius = 5;
-    public GameObject player;
     public GameObject projectileObject;
+    public float timeCoolDown;
 
-    private CircleCollider2D _detectZone;
+    private float _timer;
     private bool _leftSide, _attacked, _inRange;
+    private GameObject _player;
 
     private void CheckSide()
     {
-        if(transform.position.x < player.transform.position.x)
-        {
-            _leftSide = false;
-            base.spriteRend.flipY = true;
-        }else
+        if(transform.position.x < _player.transform.position.x)
         {
             _leftSide = true;
-            base.spriteRend.flipY = false;
+        }else
+        {
+            _leftSide = false;
         }
+        base.spriteRend.flipX = _leftSide;
     }
 
     private void Shoot()
     {
-         Instantiate(projectileObject);
+        if (!base.animator.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
+        {
+            base.animator.SetTrigger("shoot");
+            _timer = Time.time;
+            
+        }
+        if (base.animator.GetCurrentAnimatorStateInfo(0).length * 0.1 + _timer < Time.time)
+        {
+            if (_leftSide)
+            {
+                Instantiate(projectileObject, transform.position + new Vector3(1f, 0.8f, 0), transform.rotation);
+            }
+            else
+            {
+                Instantiate(projectileObject, transform.position + new Vector3(-1f, 0.8f, 0), transform.rotation);
+            }
+            base.animator.ResetTrigger("shoot");
+            _attacked = true;
+        }
     }
 
     private void EnemyRoutine()
@@ -35,19 +53,26 @@ public class MushroomEnemy : Enemy {
         {
             case State.attack:
                 CheckSide();
-                base.animator.SetBool("trig", _inRange);
                 if (!_attacked)
                 {
                     Shoot();
-                    _attacked = false;
+                    //Debug.Log("Begin time" + _timer);
                 }
+                if (_attacked)
+                {
+                    //Debug.Log("Timer" + Time.time);
+                    if (Time.time - _timer > timeCoolDown)
+                    {
+                        _attacked = false;
+                    }
+                }
+                
                 break;
             case State.idle:
                 _attacked = false;
-                base.animator.SetBool("trig", _inRange);
                 break;
             case State.dead:
-                base.animator.SetTrigger("dead");
+                base.Death();
                 break;
             default:
                 Debug.Log("State is not defined. Setting it to idle");
@@ -58,6 +83,7 @@ public class MushroomEnemy : Enemy {
     //The conditions to change its behaviour.
     private void RoutineSwitch()
     {
+        CheckInRange();
         switch (base.enemyState)
         {
             case State.idle:
@@ -83,34 +109,44 @@ public class MushroomEnemy : Enemy {
         }
     }
 
+    private void CheckInRange()
+    {
+        if ((_player.transform.position - gameObject.transform.position).sqrMagnitude < radius * radius)
+        {
+            _inRange = true;
+        }
+        else
+        {
+            _inRange = false;
+        }
+    }
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "player")
+        if (collision.gameObject.tag == "Player")
         {
             _inRange = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "player")
+        if (collision.gameObject.tag == "Player")
         {
             _inRange = false;
         }
-    }
+    }*/
 
     public override void Start () {
         base.Start();
+        _player = GameObject.FindGameObjectWithTag("Player");
         _inRange = false;
-        CheckSide();
-        _detectZone = gameObject.GetComponent<CircleCollider2D>();
-
-        _detectZone.isTrigger = true;
-        _detectZone.radius = radius;
 	}
 	
 	void Update () {
         base.Death();
         EnemyRoutine();
         RoutineSwitch();
+        Debug.Log(base.enemyState);
+        Debug.Log(_leftSide);
 	}
 }
