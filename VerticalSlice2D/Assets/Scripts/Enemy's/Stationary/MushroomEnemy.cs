@@ -120,21 +120,16 @@ public class MushroomEnemy : Enemy {
             _inRange = false;
         }
     }
-    /*
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    private void OnCollisionEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             _inRange = true;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            _inRange = false;
-        }
-    }*/
+    
+   
 
     public override void Start () {
         base.Start();

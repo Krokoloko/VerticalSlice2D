@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class camera_follow : MonoBehaviour {
 
-    public Transform _target;
+    public Transform Target;
 
     public float minX;
     public float maxX;
@@ -15,9 +15,9 @@ public class camera_follow : MonoBehaviour {
 
     void LateUpdate()
     {
-        if (!debug || debug == null)
+        if (!debug)
         {
-            transform.position = new Vector3(Mathf.Clamp(_target.position.x, minX, maxX), Mathf.Clamp(_target.position.y, minY, maxY), transform.position.z);
+            transform.position = new Vector3(Mathf.Clamp(Target.position.x, minX, maxX), Mathf.Clamp(Target.position.y, minY, maxY), transform.position.z);
         }
 
         if (debug)
